@@ -3,6 +3,7 @@
  * @brief Реализация библиотеки очереди на динамическом кольцевом буфере.
  */
 #include "queue.h"
+#include <stdint.h>
 #include <stdlib.h>
 
 #define RESIZE_GROW_FACTOR   2U
