@@ -32,11 +32,11 @@ class QueueT(_ctypes.Structure):
     """Отображение структуры queue_t из C."""
 
     _fields_ = [
+        ("data", _ctypes.POINTER(_ctypes.c_int)),
         ("head", _ctypes.c_size_t),
         ("tail", _ctypes.c_size_t),
         ("size", _ctypes.c_size_t),
         ("capacity", _ctypes.c_size_t),
-        ("data", _ctypes.POINTER(_ctypes.c_int)),
     ]
 
 
