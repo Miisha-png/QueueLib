@@ -109,6 +109,18 @@ docs-html:
 	@echo "HTML: docs/html/index.html"
 
 # =============================================================================
+# Санитайзеры
+# =============================================================================
+
+.PHONY: sanitize
+sanitize:
+	@echo "--- AddressSanitizer ---"
+	$(CC) $(CFLAGS) -fsanitize=address -fno-omit-frame-pointer \
+		-I$(INC_DIR) $(SRC_DIR)/*.c $(TEST_DIR)/test_queue.c \
+		-o $(BUILD_DIR)/test_sanitize
+	./$(BUILD_DIR)/test_sanitize
+
+# =============================================================================
 # Очистка
 # =============================================================================
 
